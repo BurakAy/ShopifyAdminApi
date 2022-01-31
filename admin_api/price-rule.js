@@ -1,6 +1,8 @@
 import { gql } from "apollo-boost";
+import { useQuery } from "react-apollo";
 
-export const GetPriceRule = gql`
+const GetPriceRule = () => { 
+    const queryCode = gql`
     {
         priceRules(first: 10) {
             edges {
@@ -9,5 +11,11 @@ export const GetPriceRule = gql`
                 }
             }
         }
-    }
-`;
+    }`
+
+    let data = useQuery(queryCode)
+
+    return data
+};
+
+export default GetPriceRule;
