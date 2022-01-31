@@ -25,7 +25,6 @@ const Index = () => {
       return element.node.title
     });
     setCodes(discountCodes)
-    console.log('clicked')
   };
 
   return(
