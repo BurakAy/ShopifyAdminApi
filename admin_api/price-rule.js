@@ -1,3 +1,13 @@
-import Shopify from "@shopify/shopify-api"
+import { gql } from "apollo-boost";
 
-export const GetPriceRule
+export const GetPriceRule = gql`
+    {
+        priceRules(first: 10) {
+            edges {
+                node {
+                    title
+                }
+            }
+        }
+    }
+`;
